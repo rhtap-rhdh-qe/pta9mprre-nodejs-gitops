@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: pta9mprre-nodejs-gitops
+  description: This is GitOps manifest for pta9mprre-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=pta9mprre-nodejs
+    backstage.io/kubernetes-id: pta9mprre-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: pta9mprre-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:pta9mprre-nodejs
